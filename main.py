@@ -3,7 +3,13 @@ import time
 
 def get_pairs():
     url = "https://api.dexscreener.com/latest/dex/pairs"
-    return requests.get(url).json().get("pairs", [])
+
+    r = requests.get(url)
+
+    print("STATUS:", r.status_code)
+    print("TEXT:", r.text[:500])
+
+    return []
 
 
 def score(pair):
